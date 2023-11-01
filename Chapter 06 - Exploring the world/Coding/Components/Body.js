@@ -5,10 +5,10 @@ import { swiggy_api_URL } from "../constants";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+  const resFilterData = restaurants.filter((restaurant) =>
+    restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
   );
-  return filterData;
+  return resFilterData;
 }
 
 // Body Component for body section: It contain all restaurant cards
@@ -28,11 +28,29 @@ const Body = () => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const data = await fetch(swiggy_api_URL);
-      const json = await data.json();
-      // updated state variable restaurants with Swiggy API data
-      setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      const response = await fetch(swiggy_api_URL);
+      const json = await response.json();
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+
+          // initialize checkData for Swiggy Restaurant data
+          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+
+      // update the state variable restaurants with Swiggy API data
+      setAllRestaurants(resData);
+      setFilteredRestaurants(resData);
     } catch (error) {
       console.log(error);
     }
@@ -41,10 +59,10 @@ const Body = () => {
   // use searchData function and set condition if data is empty show error message
   const searchData = (searchText, restaurants) => {
     if (searchText !== "") {
-      const data = filterData(searchText, restaurants);
-      setFilteredRestaurants(data);
+      const filteredData = filterData(searchText, restaurants);
+      setFilteredRestaurants(filteredData);
       setErrorMessage("");
-      if (data.length === 0) {
+      if (filteredData?.length === 0) {
         setErrorMessage("No matches restaurant found");
       }
     } else {
@@ -87,7 +105,7 @@ const Body = () => {
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+              <RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
             );
           })}
         </div>
