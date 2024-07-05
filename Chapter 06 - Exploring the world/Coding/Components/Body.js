@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react"; /* This is named export */
 import Shimmer from "./Shimmer"; /* This is default export */
-import { swiggy_api_URL } from "../constants";
+import { FOODFIRE_API_URL } from "../../../public/Common/constants";
 
 // Filter the restaurant data according input type
 function filterData(searchText, restaurants) {
@@ -28,15 +28,16 @@ const Body = () => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const response = await fetch(swiggy_api_URL);
+      const response = await fetch(FOODFIRE_API_URL);
       const json = await response.json();
 
       // initialize checkJsonData() function to check Swiggy Restaurant data
-      async function checkJsonData(jsonData) {
+      function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
-
           // initialize checkData for Swiggy Restaurant data
-          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+          let checkData =
+            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
 
           // if checkData is not undefined then return it
           if (checkData !== undefined) {
@@ -46,7 +47,7 @@ const Body = () => {
       }
 
       // call the checkJsonData() function which return Swiggy Restaurant data
-      const resData = await checkJsonData(json);
+      const resData = checkJsonData(json);
 
       // update the state variable restaurants with Swiggy API data
       setAllRestaurants(resData);
@@ -105,7 +106,10 @@ const Body = () => {
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
+              <RestaurantCard
+                key={restaurant?.info?.id}
+                {...restaurant?.info}
+              />
             );
           })}
         </div>

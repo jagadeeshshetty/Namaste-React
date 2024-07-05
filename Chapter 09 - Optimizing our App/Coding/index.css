@@ -40,6 +40,15 @@ a {
 }
 /* create global variable with :root selector End*/
 
+/* App CSS */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 /* Header CSS Start*/
 
 .header {
@@ -123,13 +132,10 @@ a {
 /* Header CSS End*/
 
 /* Body CSS Start*/
-.body-container {
-  min-height: 87vh;
-}
 
 /* search container CSS Start*/
 .search-container {
-  margin: 100px auto 20px;
+  margin: 110px auto 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,11 +213,14 @@ a {
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(0.98);
 }
 
 .card h3 {
   color: var(--light-text-title);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card > img {
@@ -221,6 +230,9 @@ a {
 
 .card > h5 {
   font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card > span {
@@ -258,14 +270,13 @@ a {
 /* Restaurant Menu CSS Start */
 .restaurant-menu {
   margin-top: 80px;
-  min-height: 80vh;
   width: auto;
 }
 
 .restaurant-summary {
   display: flex;
-  height: 200px;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   background-color: var(--light-black);
   color: var(--light-white-text);
@@ -274,15 +285,15 @@ a {
 
 .restaurant-img {
   width: 250px;
-  height: 170px;
   border-radius: 5px;
+  margin: 20px;
 }
 
 .restaurant-summary-details {
   display: flex;
   flex-direction: column;
-  flex-basis: 520px;
-  margin: 20px;
+  justify-content: flex-start;
+  margin-right: 20px;
 }
 
 .restaurant-title {
@@ -302,34 +313,40 @@ a {
 .restaurant-details {
   display: flex;
   margin-top: 18px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   font-size: 12px;
   font-weight: 600;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   color: inherit;
   font-weight: 600;
   font-size: 16px;
-  max-width: 340px;
 }
 
 .restaurant-rating {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 5px 8px;
-  gap: 5px;
+  gap: 8px;
   background-color: var(--dark-green);
   border-radius: 5px;
+}
+
+.restaurant-rating-slash {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .restaurant-menu-content {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .menu-items-container {
   margin-top: 30px;
-  width: 850px;
+  max-width: 850px;
 }
 
 .menu-title-wrap {
@@ -355,6 +372,7 @@ a {
 
 .menu-item {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 20px;
   border-bottom: rgba(40, 44, 63, 0.45) 0.5px solid;
@@ -363,7 +381,7 @@ a {
 .menu-item-details {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  justify-content: flex-start;
   overflow: hidden;
   height: auto;
 }
@@ -377,7 +395,7 @@ a {
   margin-top: 14px;
   line-height: 1.3;
   color: rgba(40, 44, 63, 0.45);
-  width: inherit;
+  width: auto;
   letter-spacing: -0.3px;
   font-size: 1rem;
 }
@@ -395,7 +413,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  width: 300px;
+  width: 450px;
   overflow: hidden;
   height: auto;
 }
@@ -415,9 +433,9 @@ a {
   border-color: var(--dark-orange);
   margin-top: 10px;
   border-radius: 5px;
+  font-size: large;
 }
-
-/* Restaurant Menu End Start */
+/* Restaurant Menu End */
 
 /*Shimmer Card CSS Start*/
 .shimmer-container {
@@ -425,6 +443,7 @@ a {
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .shimmer-card {
@@ -442,32 +461,43 @@ a {
 
 .shimmer-tags {
   width: 80%;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .shimmer-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20;
+  margin-top: 20px;
+}
+
+.shimmer-details-rating {
   width: 100%;
-  margin-top: 18px;
 }
 
 .shimmer-container .shimmer-img {
   height: 144px;
   width: 230px;
+  border-radius: 5px;
 }
 /*Shimmer Card CSS End*/
 
 /* Shimmer Menu Card CSS Start */
 
 .restaurant-summary .shimmer-img {
-  height: 144px;
-  width: 230px;
+  height: 150px;
+  width: 250px;
+  margin: 20px;
+  border-radius: 5px;
 }
 
 .shimmer-menu-card {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
   width: 848px;
   padding: 10px;
+  margin-left: 10px;
   margin-bottom: 10px;
   border-color: #d3d5df;
   box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
@@ -482,34 +512,54 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  width: 118px;
-  height: 150px;
 }
 
 .shimmer-img-wrapper .shimmer-img {
-  width: 118px;
+  width: 110px;
   height: 96px;
+  border-radius: 5px;
 }
 
 .shimmer-img-wrapper .shimmer-btn {
-  width: 94px;
+  width: 110px;
   height: 34px;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
-.shimmer-w60 {
-  width: 60%;
+.shimmer-menu-title {
+  width: 550px;
+  margin-bottom: 40px;
+}
+
+.shimmer-items {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.shimmer-menu-content {
+  width: 25%;
   margin-top: 10px;
 }
 
-.shimmer-w40 {
-  width: 40%;
+.shimmer-menu-count {
+  width: 15%;
+  margin-top: 15px;
+}
+
+.shimmer-w50 {
+  width: 50%;
   margin-top: 10px;
 }
 
 .shimmer-w20 {
   width: 20%;
-  margin-top: 4px;
+  margin-top: 20px;
+}
+
+.shimmer-w70 {
+  width: 70%;
+  margin-top: 20px;
 }
 /* Shimmer Menu Card CSS End */
 
@@ -585,8 +635,8 @@ a {
 
 .error-page .error-back-home a {
   text-decoration: none;
-  background-color: var(--orange);
-  color: var(--light-black);
+  background-color: var(--dark-orange);
+  color: var(--white);
   padding: 10px 15px;
   border-radius: 5px;
 }
@@ -603,13 +653,13 @@ a {
 }
 
 .about-profile-container {
-  margin: 100px auto 0px;
+  margin: 120px auto 0px;
   text-align: center;
 }
 
 .about-profile-button {
   background-color: var(--orange);
-  color: var(--light-white-text);
+  color: var(--white);
   padding: 10px 15px;
   border-radius: 5px;
   border: none;
@@ -808,7 +858,7 @@ a {
   color: var(--dark-orange);
 }
 
-.profile-repo .profile-repo-items h3 a{
+.profile-repo .profile-repo-items h3 a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1023,17 +1073,16 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  width: auto;
+  margin-top: 45px;
+  width: 100vw;
   text-align: center;
   background-color: var(--footer-bg-color);
-  padding: 20px 10px 20px;
-  border-radius: 5px;
+  padding: 15px 10px 15px;
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
 }
 
 .footer > i {
-  padding: 0 5px 0;
+  padding: 3px 5px 0;
   font-size: smaller;
 }
 
@@ -1050,11 +1099,12 @@ a {
   color: darkred;
 }
 
-.footer > strong {
+.footer > a > strong {
   padding-left: 5px;
+  color: var(--text-color);
 }
 
-.footer > strong > span {
+.footer > a > strong > span {
   color: var(--x-dark-orange);
 }
 
@@ -1089,11 +1139,23 @@ a {
     width: 330px;
   }
 
-  .profile-repo .profile-repo-items h3 a{
+  .profile-repo .profile-repo-items h3 a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: medium;
+  }
+
+  .shimmer-width {
+    width: 100%;
+  }
+
+  .shimmer-menu-title {
+    width: 450px;
+  }
+
+  .shimmer-menu-card {
+    width: 820px;
   }
 }
 
@@ -1119,8 +1181,49 @@ a {
     align-items: center;
   }
 
+  .shimmer-menu-card {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
   .restaurant-summary {
-    padding-left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .restaurant-img {
+    margin-left: 0px;
+  }
+
+  .restaurant-menu {
+    margin-top: 70px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .menu-img-wrapper {
+    padding-top: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 300px;
+  }
+
+  .shimmer-menu-card {
+    flex-direction: column;
+  }
+
+  .shimmer-img-wrapper {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 25px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1161,6 +1264,10 @@ a {
   .contact-container .contact-right form textarea {
     min-width: 60vw;
   }
+
+  .restaurant-menu {
+    margin-top: 60px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1170,6 +1277,10 @@ a {
 
   .search-container .search-input {
     width: 13rem;
+  }
+
+  .shimmer-menu-title {
+    width: 300px;
   }
 }
 
@@ -1205,31 +1316,12 @@ a {
   }
 
   .restaurant-menu {
-    margin-top: 60px;
-  }
-
-  .restaurant-summary {
-    height: 230px;
-    overflow-y: hidden;
-  }
-
-  .restaurant-details {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    margin-top: 50px;
   }
 
   .restaurant-rating-slash {
-    padding: 0px 20px;
-  }
-
-  .menu-item {
-    flex-wrap: wrap;
-  }
-
-  .menu-img-wrapper {
-    padding-top: 20px;
-    align-items: flex-start;
-    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .about-container .about-left h1 {
@@ -1255,8 +1347,8 @@ a {
   .contact-container .contact-left img {
     width: 200px;
   }
-  
-  .profile-repo .profile-repo-items h3 a{
+
+  .profile-repo .profile-repo-items h3 a {
     margin: 0px 5px;
   }
 }
@@ -1308,7 +1400,7 @@ a {
   }
 
   .restaurant-menu {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .login-container {
@@ -1317,6 +1409,10 @@ a {
 
   .login-form {
     max-width: 280px;
+  }
+
+  .shimmer-menu-title {
+    width: 200px;
   }
 }
 
@@ -1341,7 +1437,7 @@ a {
     margin: 20px 15px 0px;
   }
 
-  .profile-repo .profile-repo-items h3 a{
+  .profile-repo .profile-repo-items h3 a {
     font-size: small;
   }
 }
