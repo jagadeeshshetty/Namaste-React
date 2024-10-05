@@ -1,6 +1,6 @@
 # ❤️ Namaste React 🙏
 
-### _[Namaste React Live Course](https://learn.namastedev.com/courses/namaste-react-live) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://courses.namastedev.com/learn/Namaste-React). This repository for Assignment & Class Notes taken during this First Live course._
+### _[Namaste React Live Course](https://namastedev.com/learn/namaste-react?_aff=946684804112) from Zero to Hero 🚀 by [Akshay Saini](https://www.linkedin.com/in/akshaymarch7/) Founder of [NamasteDev](https://namastedev.com/?_aff=946684804112). This repository for Assignment & Class Notes taken during this First Live course._
 
 ## 💖 This Repository was trending on [Github](https://drive.google.com/file/d/1JsBAa-DXeGIvJ_xIaYjjZ5uc3z4XV8Tz/view) 🔥
 
@@ -9,7 +9,15 @@
 Note: To Fix the `CORS` Issue in [FoodFire App](https://foodfire-app.netlify.app/), I have created [FoodFire Server](https://github.com/chetannada/FoodFire-Server) a GitHub Repository, which gives own server URL. For Instance: `https://foodfire.onrender.com`
 
 # 🎨 Contents
+
 This repository contains a `Collection of Assignments & Class Notes`, which help you understand the concepts of React.js.
+
+### 🌱 Structure of this Project
+
+- index.html - _Root html file of the Project_
+- index.css - _css file of Individual Chapter Project_
+- App.js - _js file of Individual Chapter Project_
+- .env.example - _environment variables for this project to run in development environment (create a new .env file and copy all values from .env.example and fill with the actual values)_
 
 ## 📚 [_Chapter 01 - Inception_](./Chapter%2001%20-%20Inception/) (Date: 24-12-2022)
 
@@ -161,6 +169,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://bio.link/akshad_jaiswal"><img src="https://avatars.githubusercontent.com/u/111684658?v=4?s=100" width="100px;" alt="Akshad Jaiswal"/><br /><sub><b>Akshad Jaiswal</b></sub></a><br /><a href="https://github.com/chetannada/Namaste-React/commits?author=akshadjaiswal" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://ayantunjitimilehin.com/"><img src="https://avatars.githubusercontent.com/u/39725296?v=4?s=100" width="100px;" alt="Ayantunji Timilehin"/><br /><sub><b>Ayantunji Timilehin</b></sub></a><br /><a href="https://github.com/chetannada/Namaste-React/commits?author=timmy471" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Bharat2044"><img src="https://avatars.githubusercontent.com/u/104676718?v=4?s=100" width="100px;" alt="Bharat Kumar"/><br /><sub><b>Bharat Kumar</b></sub></a><br /><a href="https://github.com/chetannada/Namaste-React/commits?author=Bharat2044" title="Code">💻</a> <a href="https://github.com/chetannada/Namaste-React/pulls?q=is%3Apr+reviewed-by%3ABharat2044" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://harshvaidya.netlify.app/"><img src="https://avatars.githubusercontent.com/u/107319669?v=4?s=100" width="100px;" alt="Harsh  Vaidya"/><br /><sub><b>Harsh  Vaidya</b></sub></a><br /><a href="https://github.com/chetannada/Namaste-React/commits?author=harsh432004" title="Code">💻</a> <a href="#research-harsh432004" title="Research">🔬</a></td>
     </tr>
   </tbody>
 </table>
